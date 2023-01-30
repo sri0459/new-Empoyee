@@ -1,0 +1,68 @@
+
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<header>
+  <div class="container">
+      <h6>Employee Staff</h6>
+  </div>
+</header>
+</nav>
+
+
+<div class="content" role="main">
+  <div class="row">
+      <ng-container *ngFor="let EmploeeStaff of datalist">
+          <div class="card col-md-12" >
+              <!-- <img class="img-responsive img-thumbnail imgclass" src="{{item.image}}" > -->
+              <p style=" color: aqua;">{{EmploeeStaff.company}}</p>
+
+                 <h5><strong>{{EmploeeStaff.position}}</strong></h5>
+                 <ul>
+                    <li>
+                    <div class="content">
+                      <span>
+                          {{EmploeeStaff.location}}
+                      </span>
+                      </div>
+                    </li>
+                    <li>
+                      <div class ="content">
+                        <span>
+                          {{EmploeeStaff.contract}}
+                        </span>
+                      </div>
+                    </li>
+                </ul>
+                   <!-- <button class="btn btn-primary">{{EmploeeStaff.languages}}</button> -->
+                   <button class="btn btn-primary" style="width: 10%;padding-top: 1%;">Html</button>
+                   
+                  <!-- <button class="btn btn-primary" (click)="addtoCart(item)">Add to Cart</button> -->
+          </div>
+      
+      </ng-container>
+      
+  </div>
+
+
+</div>
+<!-- <router-outlet></router-outlet> -->
+
+<ul>
+    <li *ngFor="let EmploeeStaff of datalist" >
+        <!-- <a routerLink="/item/{{item.id}}">
+            <img  src="{{item.image}}"  alt=""> -->
+            <div class="content">
+                <div class="company">
+                    {{EmploeeStaff.company}}
+                </div>
+                <div class="content">
+                    <span>
+                        {{EmploeeStaff.location}}
+                    </span>
+                </div>
+            </div>
+            <!-- <button class="btn btn-primary"> add to cart</button> -->
+        <!-- </a> -->
+
+    </li>
+</ul> 

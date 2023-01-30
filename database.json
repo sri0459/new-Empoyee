@@ -1,0 +1,54 @@
+{
+  "EmploeeStaff": [
+      {
+          "id":1,
+          "company" : "MyHome",
+          "new" : true,
+          "featured" : true,
+          "position" : "Senior frontent Developer",
+          "contract" : "full time",
+          "location" : "USAonly",
+          "languages" : ["html", "css","javascript"]
+      },
+      {
+          "id":2,
+          "company" : "Loop Studios",
+          "new" : true,
+          "featured" : true,
+          "position" : "FullStrack Developer",
+          "contract" : "full time",
+          "location" : "USAonly",
+          "languages" : ["html", "css","javascript"]
+      },
+      {
+          "id":3,
+          "company" : "FaceIt",
+          "new" : true,
+          "featured" : true,
+          "position" : "JavaScript Developer",
+          "contract" : "full time",
+          "location" : "USAonly",
+          "languages" : ["html", "css","javascript"]
+      },
+      {
+          "id":4,
+          "company" : "Shorly",
+          "new" : true,
+          "featured" : true,
+          "position" : "frontent Developer",
+          "contract" : "full time",
+          "location" : "USA only",
+          "languages" : ["html", "css","javascript"]
+      }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
