@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { employeData } from './employeData';
@@ -12,16 +13,34 @@ export class AppComponent {
   title = 'EmployeeStaff';
   datalist : employeData[]=[];
 
-  constructor(private api : ServiceService,private route :ActivatedRoute){
+  constructor(private api : ServiceService,private route :ActivatedRoute,private http: HttpClient){
 
   }
 
   ngOnInit():void{
 
     this.getdata();
+
+    this.http
+      .get<employeData[]>('http://localhost:3000/EmploeeStaff')
+      .subscribe((data: employeData[]) => {
+        this.countries = data;
+        this.allCountries = this.countries;
+        // console.log(this.allCountries)
+      });
   }
 
+  searchTerm = '';
+  countries: employeData[] = [];
+  allCountries: employeData[] = [];
 
+  // constructor(private http: HttpClient) {}
+
+  search(value: string): void {
+    this.countries = this.allCountries.filter((val) =>
+      val.position.toLowerCase().includes(value)
+    );
+  }
 
 
 

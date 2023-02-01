@@ -6,12 +6,23 @@
       <h6>Employee Staff</h6>
   </div>
 </header>
+<!-- <mat-form-field>
+  <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Search">
+ </mat-form-field> -->
+ <form class="wrap">
+  <div class="search">
+    <h3>Search country by name filter : </h3>
+    <input class="searchTerm" type="text" name="searchTerm" 
+      placeholder="Filter by country name"
+      [(ngModel)]="searchTerm" (input)="search(searchTerm)" />
+  </div>
+</form>
 </nav>
 
 
 <div class="content" role="main">
   <div class="row">
-      <ng-container *ngFor="let EmploeeStaff of datalist">
+      <ng-container *ngFor="let EmploeeStaff of datalist | searchFilter: searchTerm; index as i">
           <div class="card col-md-12" >
               <!-- <img class="img-responsive img-thumbnail imgclass" src="{{item.image}}" > -->
               <p style=" color: aqua;">{{EmploeeStaff.company}}</p>
@@ -47,10 +58,10 @@
 </div>
 <!-- <router-outlet></router-outlet> -->
 
-<ul>
+<!-- <ul>
     <li *ngFor="let EmploeeStaff of datalist" >
-        <!-- <a routerLink="/item/{{item.id}}">
-            <img  src="{{item.image}}"  alt=""> -->
+        <a routerLink="/item/{{item.id}}">
+            <img  src="{{item.image}}"  alt="">
             <div class="content">
                 <div class="company">
                     {{EmploeeStaff.company}}
@@ -61,8 +72,8 @@
                     </span>
                 </div>
             </div>
-            <!-- <button class="btn btn-primary"> add to cart</button> -->
-        <!-- </a> -->
+             <button class="btn btn-primary"> add to cart</button>
+         </a>npm
 
     </li>
-</ul> 
+</ul>  -->
